@@ -1,9 +1,9 @@
 ---
-const domain = import.meta.env.PLAUSIBLE_DOMAIN
-const scriptUrl = import.meta.env.PLAUSIBLE_SCRIPT_URL
+import { PLAUSIBLE_SCRIPT_URL } from "astro:env/server"
+import { PLAUSIBLE_DOMAIN } from "astro:env/server"
 ---
 
-{domain && scriptUrl && (
-    <script defer src={scriptUrl} data-domain={domain}>
+{PLAUSIBLE_DOMAIN && PLAUSIBLE_SCRIPT_URL && (
+    <script defer src={PLAUSIBLE_SCRIPT_URL} data-domain={PLAUSIBLE_DOMAIN}>
     </script>
 )}

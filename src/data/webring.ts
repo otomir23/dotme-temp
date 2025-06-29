@@ -1,4 +1,6 @@
-export const slug = import.meta.env.WEBRING_SLUG
+import { WEBRING_SLUG } from "astro:env/server"
+
+export const slug = WEBRING_SLUG
 const endpoint = `https://webring.otomir23.me/${slug}/data`
 
 export type WebringSite = {

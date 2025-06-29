@@ -1,5 +1,7 @@
-const apiKey = import.meta.env.LASTFM_API_KEY
-export const username = import.meta.env.LASTFM_USERNAME
+import { LASTFM_API_KEY, LASTFM_USERNAME } from "astro:env/server"
+
+const apiKey = LASTFM_API_KEY
+export const username = LASTFM_USERNAME
 const endpoint = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`
 
 export type LastFmTrack = {
