@@ -6,10 +6,12 @@
 		"build": "astro build"
 	},
 	"devDependencies": {
+		"@astrojs/cloudflare": "^12.6.0",
 		"@tailwindcss/vite": "^4.1.11",
 		"astro": "^5.10.1",
 		"tailwindcss": "^4.1.11",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"wrangler": "^4.22.0"
 	},
 	"dependencies": {
 		"@fontsource-variable/geist": "^5.2.6",
