@@ -1,0 +1,22 @@
+---
+import "@/styles/global.css"
+import Analytics from "./Analytics.astro"
+
+type Props = { title?: string }
+const { title = "@otomir23" } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" />
+    <Analytics />
+</head>
+<body>
+    <main class="w-screen px-4 py-12 max-w-2xl mx-auto min-h-screen flex flex-col gap-4">
+        <slot></slot>
+    </main>
+</body>
+</html>

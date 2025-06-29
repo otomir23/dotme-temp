@@ -1,0 +1,19 @@
+{
+	"name": "dotme-temp",
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.11",
+		"astro": "^5.10.1",
+		"tailwindcss": "^4.1.11",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@fontsource-variable/geist": "^5.2.6",
+		"@fontsource-variable/geist-mono": "^5.2.6",
+		"remixicon": "^4.6.0"
+	}
+}

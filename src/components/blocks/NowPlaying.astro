@@ -1,0 +1,50 @@
+---
+import { getNowPlaying, username } from "@/data/now-playing"
+
+const nowPlaying = await getNowPlaying()
+const animationDuration = 30
+const repeatCount = 4
+---
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll var(--marquee-duration) linear infinite;
+    }
+
+    .delay-half {
+        animation-delay: calc(var(--marquee-duration) / -2);
+    }
+</style>
+
+<a
+    href={`https://last.fm/user/${username}`}
+    target="_blank"
+    style={`--marquee-duration: ${animationDuration}s`}
+    class="bg-pink-50 text-pink-800 font-medium py-1 uppercase overflow-hidden font-mono rounded-lg relative text-nowrap block h-8"
+>
+    <p class="animate-scroll absolute pl-2">
+        {Array.from({ length: repeatCount }).map(() => (
+            <span>
+                <i class="ri-music-2-fill"></i>
+                Listening to {nowPlaying}
+            </span>
+        ))}
+    </p>
+    <p class="animate-scroll absolute pl-2 delay-half">
+        {Array.from({ length: repeatCount }).map(() => (
+            <span>
+                <i class="ri-music-2-fill"></i>
+                Listening to {nowPlaying}
+            </span>
+        ))}
+    </p>
+</a>

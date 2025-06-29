@@ -1,0 +1,13 @@
+---
+export type Props = {
+    "class"?: string
+    name: string
+    href: string
+    icon: string
+}
+const { class: className, name, href, icon } = Astro.props
+---
+
+<a href={href} target="_blank" class={className} aria-label={name}>
+    <i class={`ri-${icon}`}></i>
+</a>

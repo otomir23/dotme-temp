@@ -1,0 +1,9 @@
+---
+const domain = import.meta.env.PLAUSIBLE_DOMAIN
+const scriptUrl = import.meta.env.PLAUSIBLE_SCRIPT_URL
+---
+
+{domain && scriptUrl && (
+    <script defer src={scriptUrl} data-domain={domain}>
+    </script>
+)}

@@ -1,0 +1,45 @@
+---
+import Layout from "@/components/layout/Layout.astro"
+import NowPlaying from "@/components/blocks/NowPlaying.astro"
+import Name from "@/components/blocks/Name.astro"
+import Social from "@/components/blocks/Social.astro"
+import Webring from "@/components/blocks/Webring.astro"
+---
+<Layout>
+    <div class="flex items-center gap-2 justify-between">
+        <Name />
+        <div class="flex items-center gap-1 text-xl">
+            <Social
+                href="https://github.com/otomir23"
+                class="text-neutral-800"
+                icon="github-fill"
+                name="GitHub"
+            />
+            <Social
+                href="https://t.me/otomir23"
+                class="text-cyan-500"
+                icon="telegram-2-fill"
+                name="Telegram"
+            />
+            <Social
+                href="https://steamcommunity.com/id/otomir23"
+                class="text-blue-900"
+                icon="steam-fill"
+                name="Steam"
+            />
+            <Social
+                href="https://twitter.com/otomir23"
+                class="text-cyan-400"
+                icon="twitter-fill"
+                name="Twitter"
+            />
+        </div>
+    </div>
+    <NowPlaying />
+    <p>
+        Website is under development. <br />
+        Please check back later.
+    </p>
+    <div class="flex-1"></div>
+    <Webring />
+</Layout>
