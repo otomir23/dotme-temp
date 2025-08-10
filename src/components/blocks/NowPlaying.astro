@@ -29,7 +29,8 @@ const repeatCount = 4
     href={`https://last.fm/user/${username}`}
     target="_blank"
     style={`--marquee-duration: ${animationDuration}s`}
-    class="bg-pink-50 text-pink-800 font-medium py-1 uppercase overflow-hidden font-mono rounded-lg relative text-nowrap block h-8"
+    class="bg-pink-50 text-pink-800 font-medium py-1 uppercase overflow-hidden font-mono rounded-lg relative text-nowrap block h-8
+    dark:bg-pink-950 dark:text-pink-50"
 >
     <p class="animate-scroll absolute pl-2">
         {Array.from({ length: repeatCount }).map(() => (

@@ -10,11 +10,12 @@ const { title = "@otomir23" } = Astro.props
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" />
     <Analytics />
 </head>
-<body>
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-200">
     <main class="w-screen px-4 py-12 max-w-2xl mx-auto min-h-screen flex flex-col gap-4">
         <slot></slot>
     </main>
