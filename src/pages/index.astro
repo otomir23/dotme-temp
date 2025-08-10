@@ -4,6 +4,8 @@ import NowPlaying from "@/components/blocks/NowPlaying.astro"
 import Name from "@/components/blocks/Name.astro"
 import Social from "@/components/blocks/Social.astro"
 import Webring from "@/components/blocks/Webring.astro"
+
+import UnderConstructionIllustration from "@/assets/under-construction.svg"
 ---
 <Layout>
     <div class="flex items-center gap-2 justify-between">
@@ -37,12 +39,8 @@ import Webring from "@/components/blocks/Webring.astro"
     </div>
     <NowPlaying />
     <p class="text-center mt-12">
-        <img
-            src="/under-construction.svg"
-            alt="Under Construction sign."
-            class="mx-auto w-48"
-        />
-        <b>Website is under construction.</b> <br />
+        <UnderConstructionIllustration class="mx-auto w-48" width={192} height={192} />
+        <b>Website is under construction!</b> <br />
         Please check back later.
     </p>
     <div class="flex-1"></div>
