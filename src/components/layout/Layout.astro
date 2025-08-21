@@ -3,7 +3,11 @@ import "@/styles/global.css"
 import Analytics from "./Analytics.astro"
 
 type Props = { title?: string }
-const { title = "@otomir23" } = Astro.props
+const { title = "Damir Modyarov ✦ @otomir23" } = Astro.props
+
+const canonical = new URL(Astro.url.pathname, Astro.site)
+const ogImage = new URL("/og-image.png", Astro.url)
+const description = "Damir Modyarov is a web developer, UI/UX designer, thing tinkerer, lazy catboy and everything in between."
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +15,25 @@ const { title = "@otomir23" } = Astro.props
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark" />
+
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    <meta name="og:image" content={ogImage} />
+    <meta name="og:type" content="website" />
+    <meta name="og:url" content={canonical}>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content={canonical.hostname}>
+    <meta name="twitter:url" content={canonical}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+
     <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+
     <Analytics />
 </head>
 <body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-200">
