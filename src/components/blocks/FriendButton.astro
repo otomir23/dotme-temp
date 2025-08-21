@@ -1,0 +1,10 @@
+---
+type Props = { href: string, src: string, name: string }
+const { href, src, name } = Astro.props
+
+const alt = name.endsWith("s") ? `${name}' 88x31 button` : `${name}'s 88x31 button`
+---
+
+<a href={href} target="_blank">
+    <img src={src} alt={alt} width="88" height="31" class="w-[88px] h-[31px]" />
+</a>
