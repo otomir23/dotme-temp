@@ -12,8 +12,9 @@ const code = `
 `
 ---
 
-<friend-button
-    code={code}
+<button
+    is="my-friend-button"
+    data-code={code}
     class=`relative cursor-pointer
     after:content-['Click_to_copy'] data-[copied]:after:content-['Copied!']
     after:absolute after:left-1/2 after:-top-full after:w-max after:-translate-1/2 after:pointer-events-none
@@ -24,7 +25,7 @@ const code = `
     dark:after:bg-zinc-950 dark:after:text-zinc-100 dark:after:border-zinc-800 dark:after:shadow-none`
 >
     <img src={src} alt="My 88x31 Button" />
-</friend-button>
+</button>
 <noscript>
     <img src={js.src} alt="Page contains JS!" />
 </noscript>
@@ -36,12 +37,12 @@ const code = `
             this.addEventListener('click', () => {
                 if (dismissTimeout)
                     clearTimeout(dismissTimeout)
-                navigator.clipboard.writeText(this.getAttribute("code") ?? "")
+                navigator.clipboard.writeText(this.getAttribute("data-code") ?? "")
                 this.setAttribute("data-copied", "true")
                 dismissTimeout = setTimeout(() => this.removeAttribute("data-copied"), 1000)
             })
         }
     }
 
-    customElements.define('friend-button', MyFriendButton, { extends: "button" })
+    customElements.define('my-friend-button', MyFriendButton, { extends: "button" })
 </script>
