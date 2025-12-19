@@ -33,14 +33,14 @@ const repeatCount = 4
     dark:bg-pink-950 dark:text-pink-50"
 >
     <p class="animate-scroll absolute pl-2">
-        {Array.from({ length: repeatCount }).map(() => (
-            <span>
+        {Array.from({ length: repeatCount }).map((_, i) => (
+            <span aria-hidden={!!i}>
                 <i class="ri-music-2-fill"></i>
                 Listening to {nowPlaying}
             </span>
         ))}
     </p>
-    <p class="animate-scroll absolute pl-2 delay-half">
+    <p class="animate-scroll absolute pl-2 delay-half" aria-hidden="true">
         {Array.from({ length: repeatCount }).map(() => (
             <span>
                 <i class="ri-music-2-fill"></i>
