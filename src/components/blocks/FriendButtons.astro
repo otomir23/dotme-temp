@@ -1,4 +1,5 @@
 ---
+import keetsta from "@/assets/88x31/keetsta.png"
 import senko from "@/assets/88x31/senko.gif"
 import jsopn from "@/assets/88x31/jsopn.gif"
 import asya from "@/assets/88x31/asya_cowl.png"
@@ -33,6 +34,7 @@ import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
 
 <div class="flex justify-center items-center flex-wrap gap-2 [image-rendering:pixelated]">
     <MyFriendButton />
+    <FriendButton src={keetsta.src} href="https://keetsta.me" name="keetsta" />
     <FriendButton src={senko.src} href="https://senko.dev" name="senkodev" />
     <FriendButton src={jsopn.src} href="https://jsopn.com/?glunging=true" name="jsopn" />
     <FriendButton src={asya.src} href="https://asyasocute.online" name="asya" />
