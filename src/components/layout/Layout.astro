@@ -40,18 +40,5 @@ const description = "Damir Modyarov is a web developer, UI/UX designer, thing ti
     <main class="w-screen px-4 py-12 max-w-2xl mx-auto min-h-screen flex flex-col gap-4">
         <slot></slot>
     </main>
-    <div class="w-screen h-screen overflow-hidden fixed -z-10 inset-0 pointer-events-none">
-        {[...Array(192)].map((_, i) => (
-            <span
-                class="absolute size-1 bg-white rounded-[100%] animate-snow -top-8"
-                style={{
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `-${i * 100}ms`,
-                    scale: `${Math.random() * 0.5 + 0.75}`,
-                    opacity: `${Math.random() * 0.4 + 0.2}`
-                }}
-            />
-        ))}
-    </div>
 </body>
 </html>
