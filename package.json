@@ -3,12 +3,16 @@
 	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
-		"build": "astro build"
+		"build": "astro build",
+		"lint": "eslint"
 	},
 	"devDependencies": {
+		"@antfu/eslint-config": "^8.1.1",
 		"@astrojs/cloudflare": "^12.6.0",
 		"@tailwindcss/vite": "^4.1.11",
 		"astro": "^5.10.1",
+		"eslint": "^10.2.0",
+		"eslint-plugin-astro": "^1.7.0",
 		"tailwindcss": "^4.1.11",
 		"typescript": "^5.8.3",
 		"wrangler": "^4.22.0"
