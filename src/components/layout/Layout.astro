@@ -1,6 +1,6 @@
 ---
-import "@/styles/global.css"
 import Analytics from "./Analytics.astro"
+import "@/styles/global.css"
 
 type Props = { title?: string }
 const { title = "Damir Modyarov ✦ @otomir23" } = Astro.props
@@ -12,22 +12,22 @@ const description = "Damir Modyarov is a web developer, UI/UX designer, thing ti
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
 
     <meta name="og:title" content={title} />
     <meta name="og:description" content={description} />
     <meta name="og:image" content={ogImage} />
     <meta name="og:type" content="website" />
-    <meta name="og:url" content={canonical}>
+    <meta name="og:url" content={canonical} />
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:domain" content={canonical.hostname}>
-    <meta name="twitter:url" content={canonical}>
-    <meta name="twitter:title" content={title}>
-    <meta name="twitter:description" content={description}>
-    <meta name="twitter:image" content={ogImage}>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content={canonical.hostname} />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <title>{title}</title>
     <meta name="description" content={description} />

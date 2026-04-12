@@ -5,19 +5,19 @@ export const username = LASTFM_USERNAME
 const endpoint = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`
 
 export type LastFmTrack = {
-    artist: {
-        "#text": string
-    }
-    name: string
+    "artist": {
+        "#text": string,
+    },
+    "name": string,
     "@attr"?: {
-        nowplaying?: "true" | "false"
-    }
+        nowplaying?: "true" | "false",
+    },
 }
 
 type LastFmResponse = {
     recenttracks: {
-        track: LastFmTrack[]
-    }
+        track: LastFmTrack[],
+    },
 }
 
 export async function getNowPlaying() {
@@ -25,7 +25,7 @@ export async function getNowPlaying() {
     if (!res.ok)
         return "Error"
     const data: LastFmResponse = await res.json()
-    const curr = data.recenttracks.track.find((track) => track["@attr"]?.nowplaying === "true")
+    const curr = data.recenttracks.track.find(track => track["@attr"]?.nowplaying === "true")
     if (!curr)
         return "Nothing"
     return `${curr.artist["#text"]} - ${curr.name}`

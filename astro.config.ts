@@ -17,6 +17,6 @@ export default defineConfig({
             WEBRING_SLUG: envField.string({ context: "server", access: "public" }),
             PLAUSIBLE_DOMAIN: envField.string({ context: "server", access: "public", optional: true }),
             PLAUSIBLE_SCRIPT_URL: envField.string({ context: "server", access: "public", optional: true }),
-        }
-    }
+        },
+    },
 })

@@ -1,9 +1,8 @@
 ---
-import { PLAUSIBLE_SCRIPT_URL } from "astro:env/server"
-import { PLAUSIBLE_DOMAIN } from "astro:env/server"
+import { PLAUSIBLE_DOMAIN, PLAUSIBLE_SCRIPT_URL } from "astro:env/server"
 ---
 
 {PLAUSIBLE_DOMAIN && PLAUSIBLE_SCRIPT_URL && (
     <script defer src={PLAUSIBLE_SCRIPT_URL} data-domain={PLAUSIBLE_DOMAIN}>
-    </script>
+</script>
 )}

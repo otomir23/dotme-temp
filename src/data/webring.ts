@@ -4,15 +4,15 @@ export const slug = WEBRING_SLUG
 const endpoint = `https://webring.otomir23.me/${slug}/data`
 
 export type WebringSite = {
-    slug: string
-    name: string
-    url: string
+    slug: string,
+    name: string,
+    url: string,
 }
 
 type WebringData = {
-    prev: WebringSite
-    curr: WebringSite
-    next: WebringSite
+    prev: WebringSite,
+    curr: WebringSite,
+    next: WebringSite,
 }
 
 export async function getWebringData(): Promise<WebringData | null> {
