@@ -1,0 +1,39 @@
+---
+type Props = { animationDuration?: number, repeatCount?: number, height: number, children: any }
+const { animationDuration = 30, repeatCount = 4, height } = Astro.props
+---
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll var(--marquee-duration) linear infinite;
+    }
+
+    .delay-half {
+        animation-delay: calc(var(--marquee-duration) / -2);
+    }
+</style>
+
+<div
+    style={`--marquee-duration: ${animationDuration}s;--height: ${height}px`}
+    class="overflow-hidden relative text-nowrap h-(--height) group"
+>
+    <div class="animate-scroll absolute group-hover:[animation-play-state:paused]! pr-2">
+        {Array.from({ length: repeatCount }).map(() => (
+            <slot />
+        ))}
+    </div>
+    <div class="animate-scroll absolute delay-half group-hover:[animation-play-state:paused]! pr-2" aria-hidden="true">
+        {Array.from({ length: repeatCount }).map(() => (
+            <slot />
+        ))}
+    </div>
+</div>

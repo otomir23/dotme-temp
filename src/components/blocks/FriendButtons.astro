@@ -29,36 +29,45 @@ import transmute from "@/assets/88x31/transmute.png"
 import vc from "@/assets/88x31/vc.gif"
 import FriendButton from "@/components/blocks/FriendButton.astro"
 import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
+import Marquee from "@/components/blocks/Marquee.astro"
 ---
 
-<div class="flex justify-center items-center flex-wrap gap-2 [image-rendering:pixelated]">
+<div class="flex items-center flex-nowrap gap-2 [image-rendering:pixelated]">
     <MyFriendButton />
-    <FriendButton src={keetsta.src} href="https://keetsta.me" name="keetsta" />
-    <FriendButton src={senko.src} href="https://senko.dev" name="senkodev" />
-    <FriendButton src={jsopn.src} href="https://jsopn.com/?glunging=true" name="jsopn" />
-    <FriendButton src={asya.src} href="https://asyasocute.online" name="asya" />
-    <FriendButton src={catboybinary.src} href="https://catboy.page/" name="catboybinary" />
-    <FriendButton src={c1oudy.src} href="https://c1oudy.otlegacy.com/" name="c1oudy" />
-    <FriendButton src={teidesu.src} href="https://tei.su/" name="alina" />
-    <FriendButton src={transmute.src} href="https://std.mem.transmute.me/" name="polina" />
-    <FriendButton src={sanspie.src} href="https://about.akarpov.ru" name="sanspie" />
-    <FriendButton src={gooslime.src} href="https://gooslime.neocities.org/" name="gooslime" />
-    <FriendButton src={nika.src} href="https://nikableh.moe" name="nika" />
-    <FriendButton src={myslivets.src} href="https://myslivets.com" name="myslivets" />
-    <FriendButton src={vc.src} href="https://veselcraft.ru/" name="veselcraft" />
-    <FriendButton src={sapphic.src} href="https://sapphic.moe" name="sapphic angels" />
-    <FriendButton src={gapp.src} href="https://gapp.pp.ua" name="gapp" />
-    <FriendButton src={pastcard.src} href="https://pastcard.su" name="pastcard" />
-    <FriendButton src={milkcool.src} href="https://milkcool.ru/" name="lily" />
-    <FriendButton src={edward.src} href="https://edwardcode.net" name="edward" />
-    <FriendButton src={manule228.src} href="https://manule228.lh1.in" name="manule228" />
-    <FriendButton src={izotopev69.src} href="https://izotopev69.neocities.org/" name="izotopev69" />
-    <FriendButton src={eepy.src} href="https://eepy.today" name="wappx" />
-    <FriendButton src={lumaeris.src} href="https://lumaeris.com" name="lumaeris" />
-    <FriendButton src={kbity.src} href="https://slightlycat.neocities.org/" name="slightly feline" />
-    <FriendButton src={fckgoogle.src} href="https://fuckyougoogle.xyz/" name="lain" />
-    <FriendButton src={nichind.src} href="https://nichind.dev/" name="nichind" />
-    <FriendButton src={elytrium.src} href="https://elytrium.com" name="elytrium" />
-    <FriendButton src={flipper.src} href="https://flipperzero.one/" name="flipper" />
-    <FriendButton src={astro.src} href="https://astro.build" name="astro.build" />
+    <div class="flex-1 relative">
+        <div class="absolute inset-y-0 left-0 pointer-events-none w-12 bg-linear-to-r from-white/80 dark:from-zinc-950/80 to-transparent z-10" />
+        <div class="absolute inset-y-0 right-0 pointer-events-none w-12 bg-linear-to-l from-white/80 dark:from-zinc-950/80 to-transparent z-10" />
+        <Marquee height={31} repeatCount={1} animationDuration={120}>
+            <div class="flex items-center flex-nowrap gap-2 w-max">
+                <FriendButton src={keetsta.src} href="https://keetsta.me" name="keetsta" />
+                <FriendButton src={senko.src} href="https://senko.dev" name="senkodev" />
+                <FriendButton src={jsopn.src} href="https://jsopn.com/?glunging=true" name="jsopn" />
+                <FriendButton src={asya.src} href="https://asyasocute.online" name="asya" />
+                <FriendButton src={catboybinary.src} href="https://catboy.page/" name="catboybinary" />
+                <FriendButton src={c1oudy.src} href="https://c1oudy.otlegacy.com/" name="c1oudy" />
+                <FriendButton src={teidesu.src} href="https://tei.su/" name="alina" />
+                <FriendButton src={transmute.src} href="https://std.mem.transmute.me/" name="polina" />
+                <FriendButton src={sanspie.src} href="https://about.akarpov.ru" name="sanspie" />
+                <FriendButton src={gooslime.src} href="https://gooslime.neocities.org/" name="gooslime" />
+                <FriendButton src={nika.src} href="https://nikableh.moe" name="nika" />
+                <FriendButton src={myslivets.src} href="https://myslivets.com" name="myslivets" />
+                <FriendButton src={vc.src} href="https://veselcraft.ru/" name="veselcraft" />
+                <FriendButton src={sapphic.src} href="https://sapphic.moe" name="sapphic angels" />
+                <FriendButton src={gapp.src} href="https://gapp.pp.ua" name="gapp" />
+                <FriendButton src={pastcard.src} href="https://pastcard.su" name="pastcard" />
+                <FriendButton src={milkcool.src} href="https://milkcool.ru/" name="lily" />
+                <FriendButton src={edward.src} href="https://edwardcode.net" name="edward" />
+                <FriendButton src={manule228.src} href="https://manule228.lh1.in" name="manule228" />
+                <FriendButton src={izotopev69.src} href="https://izotopev69.neocities.org/" name="izotopev69" />
+                <FriendButton src={eepy.src} href="https://eepy.today" name="wappx" />
+                <FriendButton src={lumaeris.src} href="https://lumaeris.com" name="lumaeris" />
+                <FriendButton src={kbity.src} href="https://slightlycat.neocities.org/" name="slightly feline" />
+                <FriendButton src={fckgoogle.src} href="https://fuckyougoogle.xyz/" name="lain" />
+                <FriendButton src={nichind.src} href="https://nichind.dev/" name="nichind" />
+                <FriendButton src={elytrium.src} href="https://elytrium.com" name="elytrium" />
+                <FriendButton src={flipper.src} href="https://flipperzero.one/" name="flipper" />
+                <FriendButton src={astro.src} href="https://astro.build" name="astro.build" />
+            </div>
+        </Marquee>
+    </div>
 </div>
