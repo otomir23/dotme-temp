@@ -6,4 +6,6 @@
 @theme {
     --font-sans: "Geist Variable", sans-serif;
     --font-mono: "Geist Mono Variable", sans-serif;
+
+    --breakpoint-xs: 30rem;
 }

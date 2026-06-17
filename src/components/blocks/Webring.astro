@@ -1,19 +1,25 @@
 ---
-import { getWebringData } from "@/data/webring"
+import WebringLogo from "@/assets/otoring.svg"
+import { getFaviconUrl, getWebringData } from "@/data/webring"
 
 const data = await getWebringData()
 ---
 
 {data && (
-    <div class="flex items-center gap-2 pt-4">
-        <a href={data.prev.url} class="flex-1 text-start">
-            &lt;-- {data.prev.name}
+    <div class="flex xs:items-center gap-2 font-medium max-xs:flex-col relative py-2 px-4">
+        <WebringLogo class="absolute -z-10 top-1/2 left-1/2 -translate-1/2 h-3/4 xs:h-[150%] w-auto dark:invert" />
+        <a href={data.prev.url} class="flex-1 text-start flex items-center gap-1 justify-start">
+            <div class="xs:hidden flex-1">&lt-</div>
+            <img src={getFaviconUrl(data.prev.favicon)} class="size-4" />
+            {data.prev.name}
         </a>
-        <a href="https://webring.otomir23.me" target="_blank" class="text-cenrer font-medium">
-            <i class="ri-global-line"></i> Webring
+        <a href="https://webring.otomir23.me" target="_blank" class="text-center font-bold not-dark:text-shadow-lg text-shadow-white">
+            otoring
         </a>
-        <a href={data.next.url} class="flex-1 text-end">
-            {data.next.name} --&gt;
+        <a href={data.next.url} class="flex-1 text-end flex items-center gap-1 justify-end">
+            {data.next.name}
+            <img src={getFaviconUrl(data.next.favicon)} class="size-4" />
+            <div class="xs:hidden flex-1">-&gt</div>
         </a>
     </div>
 )}

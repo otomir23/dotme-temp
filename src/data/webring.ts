@@ -7,6 +7,7 @@ export type WebringSite = {
     slug: string,
     name: string,
     url: string,
+    favicon: string,
 }
 
 type WebringData = {
@@ -20,4 +21,8 @@ export async function getWebringData(): Promise<WebringData | null> {
     if (!res.ok)
         return null
     return await res.json()
+}
+
+export function getFaviconUrl(favicon: string) {
+    return `https://webring.otomir23.me/media/${encodeURIComponent(favicon)}`
 }

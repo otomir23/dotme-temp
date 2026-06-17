@@ -29,15 +29,15 @@ import teidesu from "@/assets/88x31/teidesu.png"
 import transmute from "@/assets/88x31/transmute.png"
 import vc from "@/assets/88x31/vc.gif"
 import FriendButton from "@/components/blocks/FriendButton.astro"
-import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
 import Marquee from "@/components/blocks/Marquee.astro"
+import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
 ---
 
-<div class="flex items-center flex-nowrap gap-2 [image-rendering:pixelated]">
+<div class="flex items-center flex-nowrap [image-rendering:pixelated]">
     <MyFriendButton />
     <div class="flex-1 relative">
-        <div class="absolute inset-y-0 left-0 pointer-events-none w-12 bg-linear-to-r from-white/80 dark:from-zinc-950/80 to-transparent z-10" />
-        <div class="absolute inset-y-0 right-0 pointer-events-none w-12 bg-linear-to-l from-white/80 dark:from-zinc-950/80 to-transparent z-10" />
+        <div class="absolute inset-y-0 left-0 pointer-events-none w-12 bg-linear-to-r from-white dark:from-zinc-950 to-transparent z-10" />
+        <div class="absolute inset-y-0 right-0 pointer-events-none w-12 bg-linear-to-l from-white dark:from-zinc-950 to-transparent z-10" />
         <Marquee height={31} repeatCount={1} animationDuration={120}>
             <div class="flex items-center flex-nowrap gap-2 w-max">
                 <FriendButton src={keetsta.src} href="https://keetsta.me" name="keetsta" />
