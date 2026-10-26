@@ -1,6 +1,7 @@
 {
 	"name": "dotme-temp",
 	"type": "module",
+	"packageManager": "pnpm@12.3.4",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
