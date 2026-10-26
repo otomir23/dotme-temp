@@ -1,0 +1,18 @@
+---
+type Props = {
+    name: string,
+    isTitle?: boolean,
+    icon: string,
+}
+const { name, isTitle, icon } = Astro.props
+---
+
+<div class="flex flex-col">
+    <div class="flex items-center gap-1 text-foreground/50 dark:text-foreground-dark/50">
+        <i class={`ri-${icon}`} />
+        <p class="font-semibold leading-none">{name}</p>
+    </div>
+    {isTitle
+        ? <h1 class="text-2xl font-bold leading-none"><slot /></h1>
+        : <p class="text-xl font-semibold leading-none text-foreground/75 dark:text-foreground-dark/75"><slot /></p>}
+</div>

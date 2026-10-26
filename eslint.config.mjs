@@ -15,34 +15,44 @@ export default antfu({
     astro: true,
 }, {
     rules: {
-        "perfectionist/sort-imports": ["error", {
-            groups: [
-                "type",
-                "builtin",
-                "external",
-                "internal",
-                ["parent", "sibling", "index"],
-                "side-effect",
-                "unknown",
-            ],
-            newlinesBetween: "ignore",
-            order: "asc",
-            type: "natural",
-            internalPattern: ["^@/.*"],
-        }],
-        "style/member-delimiter-style": ["error", {
-            multiline: {
-                delimiter: "comma",
-                requireLast: true,
+        "perfectionist/sort-imports": [
+            "error",
+            {
+                groups: [
+                    "type",
+                    "builtin",
+                    "external",
+                    "internal",
+                    ["parent", "sibling", "index"],
+                    "side-effect",
+                    "unknown",
+                ],
+                newlinesBetween: "ignore",
+                order: "asc",
+                type: "natural",
+                internalPattern: ["^@/.*"],
             },
-            singleline: {
-                delimiter: "comma",
-                requireLast: false,
+        ],
+        "style/member-delimiter-style": [
+            "error",
+            {
+                multiline: {
+                    delimiter: "comma",
+                    requireLast: true,
+                },
+                singleline: {
+                    delimiter: "comma",
+                    requireLast: false,
+                },
             },
-        }],
-        "style/brace-style": ["error", "1tbs", {
-            allowSingleLine: true,
-        }],
+        ],
+        "style/brace-style": [
+            "error",
+            "1tbs",
+            {
+                allowSingleLine: true,
+            },
+        ],
         "antfu/top-level-function": ["off"],
     },
 })

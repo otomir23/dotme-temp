@@ -3,7 +3,7 @@ import Analytics from "./Analytics.astro"
 import "@/styles/global.css"
 
 type Props = { title?: string }
-const { title = "Damir Modyarov ✦ @otomir23" } = Astro.props
+const { title = "damir modyarov ⊹ @otomir23" } = Astro.props
 
 const canonical = new URL(Astro.url.pathname, Astro.site)
 const ogImage = new URL("/og-image.png", Astro.url)
@@ -36,8 +36,8 @@ const description = "Damir Modyarov is a web developer, UI/UX designer, thing ti
 
     <Analytics />
 </head>
-<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-200">
-    <main class="w-screen px-4 py-12 max-w-2xl mx-auto min-h-screen flex flex-col gap-4">
+<body class="bg-page text-foreground dark:bg-page-dark dark:text-foreground-dark dotted dotted-current/5 dotted-size-1.5/2 dotted-spacing-24">
+    <main class="w-screen px-4 py-12 max-w-3xl mx-auto min-h-screen flex flex-col gap-4">
         <slot></slot>
     </main>
 </body>

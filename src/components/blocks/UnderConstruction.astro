@@ -1,0 +1,16 @@
+---
+import UnderConstructionTapeIllustration from "@/assets/under-construction-tape.svg"
+import UnderConstructionIllustration from "@/assets/under-construction.svg"
+---
+
+<div
+    class="border-2 border-border dark:border-border-dark rounded-2xl py-2 px-6 bg-surface dark:bg-surface-dark not-dark:shadow-md shadow-black/5 flex gap-6 relative z-0"
+>
+    <UnderConstructionIllustration class="w-8 scale-250 -translate-y-2 shrink-0" width={32} height={32} />
+    <div class="flex flex-col leading-tight">
+        <b>Website is under construction!</b>
+        <p>Please check back later.</p>
+    </div>
+    <UnderConstructionTapeIllustration width="100%" class="absolute right-0 inset-y-0 -z-10 rounded-[14px] w-full xs:w-2/3" />
+    <div class="-z-5 absolute right-0 inset-y-0 w-full xs:w-2/3 bg-linear-to-r from-surface via-surface/75 to-surface/15 dark:from-surface-dark dark:via-surface-dark/75 dark:to-surface-dark/25 max-xs:rounded-l-[14px] rounded-r-[14px]" />
+</div>

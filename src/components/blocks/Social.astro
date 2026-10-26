@@ -1,4 +1,6 @@
 ---
+import { cn } from "cn"
+
 export type Props = {
     class?: string,
     name: string,
@@ -8,6 +10,7 @@ export type Props = {
 const { class: className, name, href, icon } = Astro.props
 ---
 
-<a href={href} target="_blank" class={className} aria-label={name}>
-    <i class={`ri-${icon}`}></i>
+<a href={href} target="_blank" class={cn("text-white size-10 rounded-lg flex items-center justify-center border-social-border dark:border-social-border-dark border-2 shadow-sm relative overflow-hidden", className)} aria-label={name}>
+    <div class="absolute inset-0 w-full h-full bg-linear-to-b from-white/15 via-transparent to-transparent via-30%" />
+    <i class={`ri-${icon}`} />
 </a>

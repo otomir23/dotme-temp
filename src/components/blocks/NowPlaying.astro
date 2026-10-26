@@ -1,5 +1,4 @@
 ---
-import Marquee from "@/components/blocks/Marquee.astro"
 import { getNowPlaying, username } from "@/data/now-playing"
 
 const nowPlaying = await getNowPlaying()
@@ -8,11 +7,8 @@ const nowPlaying = await getNowPlaying()
 <a
     href={`https://last.fm/user/${username}`}
     target="_blank"
-    class="bg-pink-50 text-pink-800 font-medium py-1 uppercase font-mono rounded-lg block h-8
-    dark:bg-pink-950 dark:text-pink-50"
+    class="border-2 border-border dark:border-border-dark rounded-2xl p-2 uppercase bg-surface dark:bg-surface-dark not-dark:shadow-md shadow-black/5"
 >
-    <Marquee height={32}>
-        <i class="ri-music-2-fill"></i>
-        Listening to {nowPlaying}
-    </Marquee>
+    <i class="ri-music-2-fill"></i>
+    Listening to {nowPlaying}
 </a>

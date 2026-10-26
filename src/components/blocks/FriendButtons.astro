@@ -27,6 +27,7 @@ import sapphic from "@/assets/88x31/sapphic.png"
 import senko from "@/assets/88x31/senko.gif"
 import senkodigital from "@/assets/88x31/senkodigital.png"
 import synzr from "@/assets/88x31/synzr.gif"
+import takasaki from "@/assets/88x31/takasaki.gif"
 import teidesu from "@/assets/88x31/teidesu.png"
 import transmute from "@/assets/88x31/transmute.png"
 import vc from "@/assets/88x31/vc.gif"
@@ -38,8 +39,8 @@ import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
 <div class="flex items-center flex-nowrap [image-rendering:pixelated]">
     <MyFriendButton />
     <div class="flex-1 relative">
-        <div class="absolute inset-y-0 left-0 pointer-events-none w-12 bg-linear-to-r from-white dark:from-zinc-950 to-transparent z-10" />
-        <div class="absolute inset-y-0 right-0 pointer-events-none w-12 bg-linear-to-l from-white dark:from-zinc-950 to-transparent z-10" />
+        <div class="absolute inset-y-0 left-0 pointer-events-none w-12 bg-linear-to-r from-surface dark:from-surface-dark to-transparent z-10" />
+        <div class="absolute inset-y-0 right-0 pointer-events-none w-12 bg-linear-to-l from-surface dark:from-surface-dark to-transparent z-10" />
         <Marquee height={31} repeatCount={1} animationDuration={120}>
             <div class="flex items-center flex-nowrap gap-2 w-max">
                 <FriendButton src={keetsta.src} href="https://keetsta.me" name="keetsta" />
@@ -69,6 +70,7 @@ import MyFriendButton from "@/components/blocks/MyFriendButton.astro"
                 <FriendButton src={kbity.src} href="https://slightlycat.neocities.org/" name="slightly feline" />
                 <FriendButton src={fckgoogle.src} href="https://fuckyougoogle.xyz/" name="lain" />
                 <FriendButton src={nichind.src} href="https://nichind.dev/" name="nichind" />
+                <FriendButton src={takasaki.src} href="https://takasaki.moe/" name="takasaki" />
                 <FriendButton src={elytrium.src} href="https://elytrium.com" name="elytrium" />
                 <FriendButton src={senkodigital.src} href="https://senko.digital" name="senko://digital" />
                 <FriendButton src={flipper.src} href="https://flipperzero.one/" name="flipper" />

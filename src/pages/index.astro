@@ -1,64 +1,14 @@
 ---
-import BarcodeIllustration from "@/assets/barcode.svg"
-import UnderConstructionIllustration from "@/assets/under-construction.svg"
-import FriendButtons from "@/components/blocks/FriendButtons.astro"
-import Name from "@/components/blocks/Name.astro"
-import NowPlaying from "@/components/blocks/NowPlaying.astro"
-import Social from "@/components/blocks/Social.astro"
-import Webring from "@/components/blocks/Webring.astro"
+import Bio from "@/components/blocks/Bio.astro"
+import Friends from "@/components/blocks/Friends.astro"
+import UnderConstruction from "@/components/blocks/UnderConstruction.astro"
+import WebsiteSources from "@/components/blocks/WebsiteSources.astro"
 import Layout from "@/components/layout/Layout.astro"
 ---
 <Layout>
-    <div class="flex items-center gap-2 justify-between">
-        <Name />
-        <div class="flex items-center gap-1 text-xl">
-            <Social
-                href="https://github.com/otomir23"
-                class="text-neutral-800 dark:text-neutral-200"
-                icon="github-fill"
-                name="GitHub"
-            />
-            <Social
-                href="https://t.me/otomir23"
-                class="text-cyan-500"
-                icon="telegram-2-fill"
-                name="Telegram"
-            />
-            <Social
-                href="https://steamcommunity.com/id/otomir23"
-                class="text-blue-900 dark:text-blue-400"
-                icon="steam-fill"
-                name="Steam"
-            />
-            <Social
-                href="https://twitter.com/otomir23"
-                class="text-cyan-400"
-                icon="twitter-fill"
-                name="Twitter"
-            />
-        </div>
-    </div>
-    <NowPlaying />
-    <p class="text-center my-12">
-        <UnderConstructionIllustration class="mx-auto w-48" width={192} height={192} />
-        <b>Website is under construction!</b> <br />
-        Please check back later.
-    </p>
+    <Bio />
+    <UnderConstruction />
+    <WebsiteSources />
     <div class="flex-1" />
-    <div class="flex flex-col overflow-hidden">
-        <div class="border-2 border-[#E6E6E6] dark:border-[#303030] border-b-0 rounded-t-xl pt-1">
-            <Webring />
-        </div>
-        <div class="flex gap-1 items-center">
-            <div class="rounded-full size-4 border-2 border-[#E6E6E6] dark:border-[#303030] border-t-transparent border-l-transparent -translate-x-1/2 -rotate-45" />
-            <div class="flex-1 border-t-2 border-dashed border-[#E6E6E6] dark:border-[#303030]" />
-            <div class="rounded-full size-4 border-2 border-[#E6E6E6] dark:border-[#303030] border-b-transparent border-r-transparent translate-x-1/2 -rotate-45" />
-        </div>
-        <div class="border-x-2 border-[#E6E6E6] dark:border-[#303030] py-2 pl-4">
-            <FriendButtons />
-        </div>
-        <div class="border-2 border-[#E6E6E6] dark:border-[#303030] border-t-0 rounded-b-xl overflow-hidden">
-            <BarcodeIllustration class="w-auto h-[9.8px] text-[#E6E6E6] dark:text-[#303030] -mb-px" />
-        </div>
-    </div>
+    <Friends />
 </Layout>

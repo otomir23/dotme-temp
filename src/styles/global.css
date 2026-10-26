@@ -1,11 +1,61 @@
 @import "tailwindcss";
-@import "@fontsource-variable/geist";
-@import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/archivo";
+@import "@fontsource/space-mono";
 @import "remixicon/fonts/remixicon.css";
 
 @theme {
-    --font-sans: "Geist Variable", sans-serif;
-    --font-mono: "Geist Mono Variable", sans-serif;
+    --color-*: initial;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-transparent: transparent;
+    --color-current: currentColor;
+
+    --color-border: #e6e6e6;
+    --color-border-dark: #303030;
+    --color-social-border: #ffffff;
+    --color-social-border-dark: #383838;
+    --color-page: #ffffff;
+    --color-page-dark: #151515;
+    --color-surface: #ffffff;
+    --color-surface-shaded: #fafafa;
+    --color-surface-dark: #0e0e0e;
+    --color-surface-dark-highlight: #151515;
+    --color-foreground: #181818;
+    --color-foreground-dark: #e4e4e4;
+
+    --color-brand-github: #101411;
+    --color-brand-telegram: #26a5e3;
+    --color-brand-steam: #182534;
+    --color-brand-twitter: #1d9bf0;
+    --color-brand-lastfm: #d0232b;
+
+    --font-sans: "Archivo Variable", sans-serif;
+    --font-mono: "Space Mono", monospace;
 
     --breakpoint-xs: 30rem;
+}
+
+@utility dotted {
+    background-image: radial-gradient(
+        var(--tw-dotted-color) var(--tw-dotted-size),
+        transparent var(--tw-dotted-edge)
+    );
+    background-size: var(--tw-dotted-spacing) var(--tw-dotted-spacing);
+}
+
+@utility dotted-* {
+    --tw-dotted-color: --value(--color-*, [color]);
+    --tw-dotted-color: --alpha(--value(--color-*, [color]) / --modifier(integer)%);
+}
+
+@utility dotted-size-* {
+    --tw-dotted-size: calc(--value(number) * 1px);
+    --tw-dotted-size: --value([length]);
+    --tw-dotted-edge: calc(--modifier(number) * 1px);
+    --tw-dotted-edge: --modifier([length]);
+}
+
+@utility dotted-spacing-* {
+    --tw-dotted-spacing: calc(--value(number) * 1px);
+    --tw-dotted-spacing: --value([length]);
 }

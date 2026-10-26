@@ -16,18 +16,18 @@ const code = `
     is="my-friend-button"
     data-code={code}
     class="relative cursor-pointer
-    after:content-['Click_to_copy'] data-[copied]:after:content-['Copied!']
+    after:content-['Click_to_copy'] data-copied:after:content-['Copied!']
     after:absolute after:left-1/2 after:-top-full after:w-max after:-translate-1/2 after:pointer-events-none
     after:opacity-0 after:translate-y-2 after:scale-75
     hover:after:opacity-100 hover:after:translate-y-0 hover:after:scale-100
     after:px-4 after:py-0.5 after:rounded-full after:transition after:text-xs
-    after:bg-white after:text-black after:border after:border-neutral-200 after:shadow
-    dark:after:bg-zinc-950 dark:after:text-zinc-100 dark:after:border-zinc-800 dark:after:shadow-none"
+    after:bg-surface after:text-foreground after:border after:border-border after:shadow
+    dark:after:bg-surface-dark dark:after:text-foreground-dark dark:after:border-border-dark dark:after:shadow-none"
 >
     <img src={src} alt="My 88x31 Button" />
 </button>
 <noscript>
-    <img src={js.src} alt="Page contains JS!" />
+    <img src={js.src} alt="Page contains JS!" class="ml-1" />
 </noscript>
 
 <script>

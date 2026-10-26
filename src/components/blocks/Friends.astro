@@ -1,0 +1,22 @@
+---
+import BarcodeIllustration from "@/assets/barcode.svg"
+import FriendButtons from "@/components/blocks/FriendButtons.astro"
+import Webring from "@/components/blocks/Webring.astro"
+---
+
+<div class="flex flex-col overflow-hidden rounded-xl bg-linear-to-b from-surface via-surface to-surface-shaded dark:from-surface-dark-highlight dark:via-surface-dark dark:to-surface-dark z-0 w-full max-w-2xl mx-auto">
+    <div class="border-2 border-border dark:border-border-dark border-b-0 rounded-t-xl pt-1">
+        <Webring />
+    </div>
+    <div class="flex gap-1 items-center">
+        <div class="rounded-full size-4 border-2 border-border dark:border-border-dark border-t-transparent border-l-transparent -translate-x-1/2 -rotate-45 dark:bg-page-dark" />
+        <div class="flex-1 border-t-2 border-dashed border-border dark:border-border-dark" />
+        <div class="rounded-full size-4 border-2 border-border dark:border-border-dark border-b-transparent border-r-transparent translate-x-1/2 -rotate-45 dark:bg-page-dark" />
+    </div>
+    <div class="border-x-2 border-border dark:border-border-dark py-2 pl-4">
+        <FriendButtons />
+    </div>
+    <div class="border-2 border-border dark:border-border-dark border-t-0 rounded-b-xl overflow-hidden">
+        <BarcodeIllustration class="w-auto h-[9.8px] text-border dark:text-border-dark -mb-px" />
+    </div>
+</div>
