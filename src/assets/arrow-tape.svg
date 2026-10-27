@@ -1,0 +1,9 @@
+<svg width="100%" height="100%" preserveAspectRatio="xMinYMid meet" viewBox="0 0 1 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1000" height="49" fill="url(#arrow-tape-tile)"/>
+<defs>
+<pattern id="arrow-tape-tile" width="145" height="49" patternUnits="userSpaceOnUse" viewBox="0 0 145 49">
+<path d="M60.6633 0H145L84.3367 25H0L60.6633 0Z" fill="currentColor"/>
+<path d="M60.6633 49H145L84.3367 25H0L60.6633 49Z" fill="currentColor"/>
+</pattern>
+</defs>
+</svg>

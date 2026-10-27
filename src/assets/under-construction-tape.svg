@@ -1,7 +1,7 @@
 <svg width="100%" height="100%" preserveAspectRatio="xMinYMid meet" viewBox="0 0 1 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1000" height="49" fill="url(#tile)"/>
+<rect width="1000" height="49" fill="url(#under-construction-tape-tile)"/>
 <defs>
-<pattern id="tile" width="146" height="49" patternUnits="userSpaceOnUse" viewBox="0 0 146 49">
+<pattern id="under-construction-tape-tile" width="146" height="49" patternUnits="userSpaceOnUse" viewBox="0 0 146 49">
 <path d="M0 0H146V49H0V0Z" fill="url(#paint0_linear_1586_2026)"/>
 <mask id="stroke0_1586_2026" fill="white">
 <path d="M0 0H146V49H0V0Z"/>
