@@ -1,39 +1,102 @@
 ---
 type Props = { animationDuration?: number, repeatCount?: number, height: number, children: any }
-const { animationDuration = 30, repeatCount = 4, height } = Astro.props
+const { animationDuration = 30, repeatCount = 1, height } = Astro.props
 ---
 
-<style>
-    @keyframes scroll {
-        0% {
-            transform: translateX(100%);
+<noscript>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
-        100% {
-            transform: translateX(-100%);
+
+        div[is=scrollable-marquee] {
+            overflow: hidden!important;
         }
-    }
 
-    .animate-scroll {
-        animation: scroll var(--marquee-duration) linear infinite;
-    }
+        .animate-scroll {
+            animation: scroll var(--marquee-duration) linear infinite;
+            translate: 0!important;
+        }
 
-    .delay-half {
-        animation-delay: calc(var(--marquee-duration) / -2);
-    }
-</style>
+        .delay-half {
+            animation-delay: calc(var(--marquee-duration) / -2);
+        }
+
+        .additional-ghost {
+            display: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-scroll {
+                animation: scroll calc(var(--marquee-duration) * 4) linear infinite;
+            }
+
+            .delay-half {
+                animation-delay: calc(var(--marquee-duration) * -2);
+            }
+        }
+    </style>
+</noscript>
 
 <div
+    is="scrollable-marquee"
     style={`--marquee-duration: ${animationDuration}s;--height: ${height}px`}
-    class="overflow-hidden relative text-nowrap h-(--height) group"
+    class="overflow-x-auto scrollbar-none relative text-nowrap h-(--height) group"
+    data-duration={animationDuration}
 >
-    <div class="animate-scroll absolute group-hover:[animation-play-state:paused]! pr-2">
-        {Array.from({ length: repeatCount }).map(() => (
-            <slot />
-        ))}
-    </div>
     <div class="animate-scroll absolute delay-half group-hover:[animation-play-state:paused]! pr-2" aria-hidden="true">
         {Array.from({ length: repeatCount }).map(() => (
             <slot />
         ))}
     </div>
+    <div class="animate-scroll absolute group-hover:[animation-play-state:paused]! pr-2 translate-x-full">
+        {Array.from({ length: repeatCount }).map(() => (
+            <slot />
+        ))}
+    </div>
+    <div class="animate-scroll absolute delay-half group-hover:[animation-play-state:paused]! pr-2 translate-x-[200%] additional-ghost" aria-hidden="true">
+        {Array.from({ length: repeatCount }).map(() => (
+            <slot />
+        ))}
+    </div>
 </div>
+
+<script>
+    class ScrollableMarquee extends HTMLDivElement {
+        connectedCallback() {
+            const duration = +(this.getAttribute("data-duration") ?? 0)
+            const speed = this.scrollWidth / 2 / duration
+
+            const part = this.scrollWidth / 3
+            this.scrollLeft = this.scrollLeft % part + part
+
+            let frame: number | undefined
+            let lastFrame = performance.now()
+            let touching = false
+            const animationFrame = () => {
+                const currentFrame = performance.now()
+                const delta = currentFrame - lastFrame
+
+                if (!this.matches(":hover") && !touching)
+                    this.scrollLeft += delta * speed / 1000
+                frame = requestAnimationFrame(animationFrame)
+                lastFrame = currentFrame
+            }
+            frame = requestAnimationFrame(animationFrame)
+
+            this.addEventListener("scroll", () => {
+                this.scrollLeft = this.scrollLeft % part + part
+            })
+            this.addEventListener("touchstart", e => touching = !!e.touches.length, { passive: true })
+            this.addEventListener("touchend", e => touching = !!e.touches.length, { passive: true })
+            this.addEventListener("touchcancel", e => touching = !!e.touches.length, { passive: true })
+        }
+    }
+
+    customElements.define("scrollable-marquee", ScrollableMarquee, { extends: "div" })
+</script>
