@@ -31,6 +31,8 @@ const code = `
 </noscript>
 
 <script>
+    import "./polyfill"
+
     class MyFriendButton extends HTMLButtonElement {
         connectedCallback() {
             let dismissTimeout: ReturnType<typeof setTimeout>

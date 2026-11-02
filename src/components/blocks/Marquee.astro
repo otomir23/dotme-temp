@@ -67,6 +67,8 @@ const { animationDuration = 30, repeatCount = 1, height } = Astro.props
 </div>
 
 <script>
+    import "./polyfill"
+
     class ScrollableMarquee extends HTMLDivElement {
         connectedCallback() {
             const duration = +(this.getAttribute("data-duration") ?? 0)
