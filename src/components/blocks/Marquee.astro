@@ -77,6 +77,7 @@ const { animationDuration = 30, repeatCount = 1, height } = Astro.props
             const part = this.scrollWidth / 3
             this.scrollLeft = this.scrollLeft % part + part
 
+            let pos = this.scrollLeft
             let frame: number | undefined
             let lastFrame = performance.now()
             let touching = false
@@ -84,15 +85,20 @@ const { animationDuration = 30, repeatCount = 1, height } = Astro.props
                 const currentFrame = performance.now()
                 const delta = currentFrame - lastFrame
 
-                if (!this.matches(":hover") && !touching)
-                    this.scrollLeft += delta * speed / 1000
+                if (!this.matches(":hover") && !touching) {
+                    pos += delta * speed / 1000
+                    this.scrollLeft = pos
+                }
                 frame = requestAnimationFrame(animationFrame)
                 lastFrame = currentFrame
             }
             frame = requestAnimationFrame(animationFrame)
 
             this.addEventListener("scroll", () => {
-                this.scrollLeft = this.scrollLeft % part + part
+                if (Math.abs(this.scrollLeft - pos) >= 1)
+                    pos = this.scrollLeft
+                pos = pos % part + part
+                this.scrollLeft = pos
             })
             this.addEventListener("touchstart", e => touching = !!e.touches.length, { passive: true })
             this.addEventListener("touchend", e => touching = !!e.touches.length, { passive: true })
